@@ -1,20 +1,21 @@
 import { useState, useCallback, useEffect } from 'react';
+import Image from '../Image/Image';
+import Description from '../Description/Description';
+import classes from './ArtPiece.module.css';
 
 const ArtPiece = () => {
-  const [art,setArt] = useState({});
+  const [title, setTitle] = useState('');
+  const [artist, setArtist] = useState('');
+  const [image, setImage] = useState('')
 
   const fetchArtPiece = useCallback(async () => {
     const response = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/436121');
     const data = await response.json();
     console.log(data)
 
-    const artPiece = {
-      title: data.title,
-      artist: data.artistDisplayName,
-      image: data.primaryImage
-    }
-
-    setArt(artPiece);
+    setTitle(data.title);
+    setArtist(data.artistDisplayName);
+    setImage(data.primaryImage);
   }, []);
 
   useEffect(() => {
@@ -22,10 +23,9 @@ const ArtPiece = () => {
   }, [fetchArtPiece])
   
   return (
-    <section>
-      <h1>{art.title}</h1>
-      <h2>{art.artist}</h2>
-      <img src={art.image} alt={`${art.title} by ${art.artist}`} />
+    <section className={classes.container}>
+      <Description title={title} artist={artist} />
+      <Image title={title} artist={artist} image={image} />
     </section>
   )
 }
