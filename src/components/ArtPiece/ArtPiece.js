@@ -8,6 +8,7 @@ const ArtPiece = () => {
   const [artist, setArtist] = useState('');
   const [image, setImage] = useState('');
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchArtPiece = useCallback(async () => {
     try {
@@ -25,6 +26,8 @@ const ArtPiece = () => {
       console.log(error.message);
       setError(true);
     }
+
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -33,8 +36,9 @@ const ArtPiece = () => {
   
   return (
     <>
-      {error && <p className={classes.error}>An error has occurred. Please try again later.</p>}
-      {!error &&
+      {isLoading && <p className={classes.loading}>Loading...</p>}
+      {error && !isLoading && <p className={classes.error}>An error has occurred. Please try again later.</p>}
+      {!error && !isLoading &&
         <section className={classes.container}>
           <Image title={title} artist={artist} image={image} />
           <Description title={title} artist={artist} />
