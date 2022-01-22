@@ -1,4 +1,3 @@
-import './App.css';
 import ArtPiece from './components/ArtPiece/ArtPiece';
 
 function App() {

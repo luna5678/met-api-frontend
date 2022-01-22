@@ -24,8 +24,8 @@ const ArtPiece = () => {
   
   return (
     <section className={classes.container}>
-      <Description title={title} artist={artist} />
       <Image title={title} artist={artist} image={image} />
+      <Description title={title} artist={artist} />
     </section>
   )
 }

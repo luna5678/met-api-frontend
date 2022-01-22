@@ -1,3 +1,19 @@
+.description-background {
+  background-color: #f1f1f1;
+  padding: 3rem 2rem;
+  border: #f5d3a4 10px solid;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
 .description {
-  align-self: center;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 3px 3px #e6e6e6;
+}
+
+.description h2 {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 20px;
 }
