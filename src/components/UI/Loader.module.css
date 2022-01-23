@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+p {
+  color: #e4022b;
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}
+
+.loader {
+  animation: spin 1s linear infinite;
+  width: 70px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

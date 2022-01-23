@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import Image from '../Image/Image';
 import Description from '../Description/Description';
+import Loader from '../UI/Loader';
 import classes from './ArtPiece.module.css';
 
 const ArtPiece = () => {
@@ -12,7 +13,7 @@ const ArtPiece = () => {
 
   const fetchArtPiece = useCallback(async () => {
     try {
-      const response = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/436121');
+      const response = await fetch('https://collectionapi.metmuseum.org/publi/collection/v1/objects/436121');
       if (!response.ok) {
         console.log(response)
         throw new Error(`Error: ${response.status} ${response.statusText}`)
@@ -36,7 +37,7 @@ const ArtPiece = () => {
   
   return (
     <section className={classes.container}>
-      {isLoading && <p className={classes.loading}>Entering The MET...</p>}
+      {isLoading && <Loader />}
       {error && !isLoading && <p className={classes.error}>Oops! An error has occurred. Please try again later.</p>}
       {!error && !isLoading &&
         <>
