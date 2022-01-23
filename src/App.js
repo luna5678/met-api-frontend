@@ -2,7 +2,7 @@ import ArtPiece from './components/ArtPiece/ArtPiece';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <ArtPiece />
     </div>
   );
