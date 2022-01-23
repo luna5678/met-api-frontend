@@ -35,16 +35,16 @@ const ArtPiece = () => {
   }, [fetchArtPiece])
   
   return (
-    <>
-      {isLoading && <p className={classes.loading}>Loading...</p>}
-      {error && !isLoading && <p className={classes.error}>An error has occurred. Please try again later.</p>}
+    <section className={classes.container}>
+      {isLoading && <p className={classes.loading}>Entering The MET...</p>}
+      {error && !isLoading && <p className={classes.error}>Oops! An error has occurred. Please try again later.</p>}
       {!error && !isLoading &&
-        <section className={classes.container}>
+        <>
           <Image title={title} artist={artist} image={image} />
           <Description title={title} artist={artist} />
-        </section>
+        </>
       }
-    </>
+    </section>
   )
 }
 
