@@ -13,7 +13,7 @@ const ArtPiece = () => {
 
   const fetchArtPiece = useCallback(async () => {
     try {
-      const response = await fetch('https://collectionapi.metmuseum.org/publi/collection/v1/objects/436121');
+      const response = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/436121');
       if (!response.ok) {
         console.log(response)
         throw new Error(`Error: ${response.status} ${response.statusText}`)
