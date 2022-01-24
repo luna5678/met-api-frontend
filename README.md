@@ -12,7 +12,7 @@ Renders the image, title of the art, and the artist's name.
 - React v17.0
 - CSS modules
 
-## Available Scripts
+## Installation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
