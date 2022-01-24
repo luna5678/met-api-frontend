@@ -1,9 +1,9 @@
-nav {
+.navbar {
   background-color: #f2f2f4;
   padding: 1rem 0;
   text-align: center;
 }
 
-nav img {
+.navbar .logo {
   width: 4rem;
 }
