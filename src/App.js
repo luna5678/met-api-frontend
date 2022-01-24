@@ -1,10 +1,14 @@
+import Navbar from './components/Navbar/Navbar';
 import ArtPiece from './components/ArtPiece/ArtPiece';
 
 function App() {
   return (
-    <div>
-      <ArtPiece />
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <ArtPiece />
+      </main>
+    </>
   );
 }
 
